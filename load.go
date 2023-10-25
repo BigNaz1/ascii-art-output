@@ -1,30 +1,24 @@
 package artist
 
 import (
-	"os"
 	"bufio"
 	"fmt"
+	"os"
 )
 
 var asciiArt []string
 
-func Hasooni() {
-textformat := "standard.txt"
-//filename := ""
-args := os.Args[1:]
-for _, v := range args {
-	if v == "shadow" || v == "Shadow"{
-		textformat = "shadow.txt"
-	}
-	if v == "thinkertoy" || v == "Thinkertoy"{
-		textformat = "thinkertoy.txt"
-	}
-	if len(v) > 9 && v[:9] == "--output=" {
-		textformat = v[9:]
-	}
-}
+func Hasooni(font string) {
+	textFormat := "standard.txt"
 
-	f, err := os.Open(textformat)
+	switch font {
+	case "shadow":
+		textFormat = "shadow.txt"
+	case "thinkertoy":
+		textFormat = "thinkertoy.txt"
+	}
+
+	f, err := os.Open(textFormat)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(0)
@@ -35,8 +29,4 @@ for _, v := range args {
 	for scanner.Scan() {
 		asciiArt = append(asciiArt, scanner.Text())
 	}
-}
-
-func GetAsciiArt() []string {
-	return asciiArt
 }
