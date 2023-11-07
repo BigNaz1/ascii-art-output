@@ -33,7 +33,7 @@ func main() {
 	artist.Hasooni(fontStyle)
 
 	// Generate ASCII art
-	asciiArt := artist.GenerateASCIIArt(inputText) // Use the function from the artist package
+	asciiArt := artist.generateArt(inputText) // Use the function from the artist package
 
 	// Save the ASCII art to file if the output flag is provided
 	if outputFlag != "" {
