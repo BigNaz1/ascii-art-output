@@ -6,7 +6,7 @@ import (
 )
 
 // saveToFile saves the content to the specified file
-func saveToFile(fileName, content string) error {
+func SaveToFile(fileName, content string) error {
 	file, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
 		return err

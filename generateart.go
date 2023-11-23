@@ -5,7 +5,7 @@ import (
 )
 
 // generateASCIIArt generates the ASCII art for the given text
-func generateArt(text string) string {
+func Generateart(text string) string {
 	lines := strings.Split(text, "\\n") // Split text into lines
 	var asciiArt strings.Builder
 

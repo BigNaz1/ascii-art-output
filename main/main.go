@@ -1,7 +1,6 @@
 package main
 
 import (
-	//"bufio"
 	"fmt"
 	"os"
 	"strings"
@@ -11,8 +10,9 @@ import (
 func main() {
 	// Read command-line arguments
 	args := os.Args[1:]
-	if len(args) < 1 {
+	if len(args) <= 1 {
 		fmt.Println("Insufficient command-line arguments provided.")
+		fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]")
 		fmt.Println("Usage: go run . [--output=banner.txt] \"Hello There!\" shadow")
 		return
 	}
@@ -33,7 +33,7 @@ func main() {
 	artist.Hasooni(fontStyle)
 
 	// Generate ASCII art
-	asciiArt := artist.generateArt(inputText) // Use the function from the artist package
+	asciiArt := artist.Generateart(inputText) // Use the function from the artist package
 
 	// Save the ASCII art to file if the output flag is provided
 	if outputFlag != "" {
